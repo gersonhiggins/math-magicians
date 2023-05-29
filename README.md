@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h1><b>LeaderBoard</b></h1>
+  <h1><b>Math Magicians</b></h1>
 </div>
 
 # 📗 Table of Contents
