@@ -26,7 +26,7 @@
 - [📝 License](#license)
 
 
-# 📖 To do List <a name="about-project"></a>
+# 📖 Math magicians List <a name="about-project"></a>
 
 **Math Magicians** is a project done This is for the activity "math magicians" of the Microverse Program. The goal is to to use react and gitflow.
 
