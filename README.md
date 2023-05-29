@@ -28,7 +28,7 @@
 
 # 📖 To do List <a name="about-project"></a>
 
-**To do List** is a project done This is for the activity "math magicians" of the Microverse Program. The goal is to to use react and gitflow.
+**Math Magicians** is a project done This is for the activity "math magicians" of the Microverse Program. The goal is to to use react and gitflow.
 
 ## 🛠 Built With <a name="built-with"></a>
 
