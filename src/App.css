@@ -35,6 +35,54 @@ a:hover {
 
 .calculator-box {
   border: 1px solid black;
-  height: 500px;
-  width: 500px;
+  height: 370px;
+  width: 370px;
+}
+
+input {
+  text-align: right;
+  background-color: rgb(189, 189, 189);
+  border: none;
+  width: 350px;
+  height: 58px;
+  font-size: 30px;
+  padding: 10px;
+}
+
+form {
+  height: 100%;
+  width: 100%;
+}
+
+.grid {
+  height: 100%;
+  width: 100%;
+}
+
+.buttons {
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  height: 15.8%;
+  width: 25%;
+  border: 1px solid gray;
+  background-color: rgba(240, 240, 240, 0.915);
+}
+
+.cero {
+  width: 50%;
+}
+
+.calc {
+  background-color: rgb(254, 199, 98);
+}
+
+@media only screen and (max-width: 630px) {
+  .calculator {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
