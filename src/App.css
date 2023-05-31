@@ -39,6 +39,10 @@ a:hover {
   width: 370px;
 }
 
+.saved {
+  display: none;
+}
+
 input {
   text-align: right;
   background-color: rgb(189, 189, 189);
