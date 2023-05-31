@@ -1,7 +1,7 @@
 body {
   box-sizing: border-box;
-
 }
+
 header {
   margin: 20px;
   display: flex;
@@ -64,9 +64,11 @@ button {
   border: 1px solid gray;
   background-color: rgba(240, 240, 240, 0.915);
 }
+
 .button {
   height: 100%;
 }
+
 .cero {
   width: 50%;
 }
