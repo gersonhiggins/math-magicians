@@ -1,41 +1,29 @@
-import React from 'react';
-import {
-  numberClick, operatorClick, ac, dot, result, porcentaje,
-} from '../modules/calculate';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import Buttons from './buttons';
+import calculate from '../logic/calculate';
+import Result from './result';
 
-const Calculator = () => (
-  <div className="calculator">
-    <h2>Lets do some math </h2>
-    <div className="calculator-box">
-      <form>
-        <div className="grid">
-          <input className="input" type="text" value="0" readOnly />
-          <p className="saved">0</p>
-          <div className="buttons">
-            <button onClick={ac} type="button" className="ac">AC</button>
-            <button onClick={operatorClick} type="button" className="operator">+/-</button>
-            <button onClick={porcentaje} type="button" className="operator">%</button>
-            <button onClick={operatorClick} type="button" className="calc operator">÷</button>
-            <button onClick={numberClick} type="button" className="number">7</button>
-            <button onClick={numberClick} type="button" className="number">8</button>
-            <button onClick={numberClick} type="button" className="number">9</button>
-            <button onClick={operatorClick} type="button" className="calc operator">x</button>
-            <button onClick={numberClick} type="button" className="number">4</button>
-            <button onClick={numberClick} type="button" className="number">5</button>
-            <button onClick={numberClick} type="button" className="number">6</button>
-            <button onClick={operatorClick} type="button" className="calc operator">-</button>
-            <button onClick={numberClick} type="button" className="number">1</button>
-            <button onClick={numberClick} type="button" className="number">2</button>
-            <button onClick={numberClick} type="button" className="number">3</button>
-            <button onClick={operatorClick} type="button" className="calc operator">+</button>
-            <button onClick={numberClick} type="button" className="number cero">0</button>
-            <button onClick={dot} type="button" className="number">.</button>
-            <button onClick={result} type="button" className="calc result">=</button>
-          </div>
-        </div>
-      </form>
+const Calculator = ({ begin }) => {
+  const [obj, setObj] = useState({ next: begin });
+  const buttonClick = (buttonName) => {
+    setObj((obj) => calculate(obj, buttonName));
+  };
+
+  const operation = obj.next ? obj.next : obj.total || 0;
+
+  return (
+    <div className="calculator">
+      <h2>Lets do some math </h2>
+      <div className="calc-box">
+        <Result value={operation} />
+        <Buttons onButtonClick={buttonClick} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
+Calculator.propTypes = { begin: PropTypes.number };
+Calculator.defaultProps = { begin: 0 };
 
 export default Calculator;
