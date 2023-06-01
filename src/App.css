@@ -1,3 +1,7 @@
+body {
+  box-sizing: border-box;
+}
+
 header {
   margin: 20px;
   display: flex;
@@ -31,16 +35,21 @@ a:hover {
 .calculator {
   display: flex;
   justify-content: space-around;
+  height: 100%;
+  width: 100%;
 }
 
-.calculator-box {
+.calc-box {
+  display: block;
   border: 1px solid black;
   height: 370px;
   width: 370px;
 }
 
-input {
-  text-align: right;
+.input {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   background-color: rgb(189, 189, 189);
   border: none;
   width: 350px;
@@ -49,26 +58,15 @@ input {
   padding: 10px;
 }
 
-form {
-  height: 100%;
-  width: 100%;
-}
-
-.grid {
-  height: 100%;
-  width: 100%;
-}
-
-.buttons {
-  height: 100%;
-  width: 100%;
-}
-
 button {
   height: 15.8%;
   width: 25%;
   border: 1px solid gray;
   background-color: rgba(240, 240, 240, 0.915);
+}
+
+.button {
+  height: 100%;
 }
 
 .cero {

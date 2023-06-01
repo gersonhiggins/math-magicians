@@ -1,37 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import Buttons from './buttons';
+import calculate from '../logic/calculate';
+import Result from './result';
 
-const Calculator = () => (
-  <div className="calculator">
-    <h2>Lets do some math </h2>
-    <div className="calculator-box">
-      <form>
-        <div className="grid">
-          <input type="text" value="0" readOnly />
-          <div className="buttons">
-            <button type="button">AC</button>
-            <button type="button">+/-</button>
-            <button type="button">%</button>
-            <button type="button" className="calc">+</button>
-            <button type="button">7</button>
-            <button type="button">8</button>
-            <button type="button">9</button>
-            <button type="button" className="calc">x</button>
-            <button type="button">4</button>
-            <button type="button">5</button>
-            <button type="button">6</button>
-            <button type="button" className="calc">-</button>
-            <button type="button">1</button>
-            <button type="button">2</button>
-            <button type="button">3</button>
-            <button type="button" className="calc">+</button>
-            <button type="button" className="cero">0</button>
-            <button type="button">.</button>
-            <button type="button" className="calc">=</button>
-          </div>
-        </div>
-      </form>
+const Calculator = ({ begin }) => {
+  const [obj, setObj] = useState({ next: begin });
+  const buttonClick = (buttonName) => {
+    setObj((obj) => calculate(obj, buttonName));
+  };
+
+  const operation = obj.next ? obj.next : obj.total || 0;
+
+  return (
+    <div className="calculator">
+      <h2>Lets do some math </h2>
+      <div className="calc-box">
+        <Result value={operation} />
+        <Buttons onButtonClick={buttonClick} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
+Calculator.propTypes = { begin: PropTypes.number };
+Calculator.defaultProps = { begin: 0 };
 
 export default Calculator;
